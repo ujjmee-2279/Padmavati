@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "format:{location_name}-{location_code}",
  "creation": "2024-09-02 16:17:43.560295",
@@ -89,7 +90,7 @@
  "index_web_pages_for_search": 1,
  "is_tree": 1,
  "links": [],
- "modified": "2024-09-02 16:29:37.828270",
+ "modified": "2024-09-03 16:30:16.394447",
  "modified_by": "Administrator",
  "module": "Padmavati_CRM",
  "name": "Geographic Location",

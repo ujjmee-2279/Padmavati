@@ -6,51 +6,25 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "area_details_section",
   "naming_series",
+  "country",
+  "state",
+  "column_break_lfbk",
+  "city",
+  "districtarea",
+  "street",
   "section_break_ahyt",
-  "daily",
   "column_break_rshe",
+  "designation",
+  "daily",
   "weekly",
-  "column_break_upyk",
   "monthly",
-  "section_break_uxnk",
-  "daily_target_quantity",
-  "column_break_dxkj",
-  "daily_target_amount",
-  "section_break_vbwx",
-  "weekly_target"
+  "fetch_employees",
+  "section_break_jojq",
+  "target_allocation"
  ],
  "fields": [
-  {
-   "depends_on": "eval:doc.daily === 1;",
-   "fieldname": "section_break_uxnk",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "daily_target_quantity",
-   "fieldtype": "Data",
-   "label": "Daily Target Quantity"
-  },
-  {
-   "fieldname": "column_break_dxkj",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "daily_target_amount",
-   "fieldtype": "Data",
-   "label": "Daily Target Amount"
-  },
-  {
-   "depends_on": "eval:doc.weekly === 1;",
-   "fieldname": "section_break_vbwx",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "weekly_target",
-   "fieldtype": "Table",
-   "label": "Weekly Target",
-   "options": "Weekly Target Allocation"
-  },
   {
    "default": "0",
    "fieldname": "daily",
@@ -68,10 +42,6 @@
    "label": "Weekly"
   },
   {
-   "fieldname": "column_break_upyk",
-   "fieldtype": "Column Break"
-  },
-  {
    "default": "0",
    "fieldname": "monthly",
    "fieldtype": "Check",
@@ -87,11 +57,72 @@
   {
    "fieldname": "section_break_ahyt",
    "fieldtype": "Section Break"
+  },
+  {
+   "default": "India-91",
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Geographic Location"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Link",
+   "label": "State",
+   "options": "Geographic Location"
+  },
+  {
+   "fieldname": "column_break_lfbk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Link",
+   "label": "City",
+   "options": "Geographic Location"
+  },
+  {
+   "fieldname": "districtarea",
+   "fieldtype": "Link",
+   "label": "District/Area",
+   "options": "Geographic Location"
+  },
+  {
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation"
+  },
+  {
+   "fieldname": "area_details_section",
+   "fieldtype": "Section Break",
+   "label": "Area Details "
+  },
+  {
+   "fieldname": "fetch_employees",
+   "fieldtype": "Button",
+   "label": "Fetch Employees"
+  },
+  {
+   "fieldname": "section_break_jojq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "target_allocation",
+   "fieldtype": "Table",
+   "label": "Target Allocation",
+   "options": "Target Allocation Table"
+  },
+  {
+   "fieldname": "street",
+   "fieldtype": "Link",
+   "label": "Street",
+   "options": "Geographic Location"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-03 12:54:35.739770",
+ "modified": "2024-09-03 17:48:34.893708",
  "modified_by": "Administrator",
  "module": "Padmavati_CRM",
  "name": "Sales Person Target Allocation",

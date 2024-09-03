@@ -1,21 +1,24 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2024-09-03 12:09:57.406453",
+ "creation": "2024-09-03 17:42:15.927814",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "day",
+  "item_group",
   "quantity",
-  "amount"
+  "amount",
+  "from",
+  "to"
  ],
  "fields": [
   {
-   "fieldname": "day",
-   "fieldtype": "Data",
+   "fieldname": "item_group",
+   "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Day"
+   "label": "Item Group",
+   "options": "Item Group"
   },
   {
    "fieldname": "quantity",
@@ -28,15 +31,27 @@
    "fieldtype": "Float",
    "in_list_view": 1,
    "label": "Amount"
+  },
+  {
+   "fieldname": "from",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "From"
+  },
+  {
+   "fieldname": "to",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "To"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-09-03 12:11:55.628647",
+ "modified": "2024-09-03 17:43:36.364277",
  "modified_by": "Administrator",
  "module": "Padmavati_CRM",
- "name": "Weekly Target Allocation",
+ "name": "Target Allocation Table",
  "owner": "Administrator",
  "permissions": [],
  "sort_field": "modified",

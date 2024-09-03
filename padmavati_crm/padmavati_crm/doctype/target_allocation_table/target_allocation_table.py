@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class WeeklyTargetAllocation(Document):
+class TargetAllocationTable(Document):
 	pass
