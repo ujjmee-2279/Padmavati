@@ -7,7 +7,6 @@
  "engine": "InnoDB",
  "field_order": [
   "location_name",
-  "parent_location",
   "column_break_ejij",
   "is_group",
   "location_type",
@@ -22,12 +21,6 @@
    "fieldname": "location_name",
    "fieldtype": "Data",
    "label": "Location Name"
-  },
-  {
-   "fieldname": "parent_location",
-   "fieldtype": "Link",
-   "label": "Parent Location",
-   "options": "Geographic Location"
   },
   {
    "fieldname": "column_break_ejij",
@@ -89,7 +82,7 @@
  "index_web_pages_for_search": 1,
  "is_tree": 1,
  "links": [],
- "modified": "2024-09-02 16:29:37.828270",
+ "modified": "2024-09-03 15:31:19.958354",
  "modified_by": "Administrator",
  "module": "Padmavati_CRM",
  "name": "Geographic Location",

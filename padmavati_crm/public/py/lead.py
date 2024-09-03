@@ -45,3 +45,4 @@ def generate_unique_code(country=None, state=None, city=None, area=None, street=
 
     print("\n\n\n\nUnique ID:", unique_id)
     return unique_id
+

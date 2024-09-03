@@ -9,6 +9,41 @@ frappe.ui.form.on('Lead', {
                 }
             }
         })
+        frm.set_query("custom_geolocation_country", function () {
+            return {
+                "filters": {
+                    "location_type": "Country"
+                }
+            }
+        })
+        frm.set_query("custom_geolocation_state", function () {
+            return {
+                "filters": {
+                    "location_type": "State"
+                }
+            }
+        })
+        frm.set_query("custom_geolocation_city", function () {
+            return {
+                "filters": {
+                    "location_type": "City"
+                }
+            }
+        })
+        frm.set_query("custom_geolocation_area", function () {
+            return {
+                "filters": {
+                    "location_type": "Area"
+                }
+            }
+        })
+        frm.set_query("custom_geolocation_street", function () {
+            return {
+                "filters": {
+                    "location_type": "Street"
+                }
+            }
+        })
         // Setting button based on the qualification status(In Process)
         if (frm.doc.qualification_status === "In Process") {
             frm.add_custom_button(__("Create Customer", function () {
@@ -51,5 +86,38 @@ frappe.ui.form.on('Lead', {
                 }
             });
         }
+    },
+
+    before_save: function(frm) {
+        
+        if (frm.doc.custom_geolocation_country || frm.doc.custom_geolocation_state
+            || frm.doc.custom_geolocation_city || frm.doc.custom_geolocation_area 
+            || frm.doc.custom_geolocation_street  
+        ) {
+            let args = {
+                country: frm.doc.custom_geolocation_country,
+                state: frm.doc.custom_geolocation_state,
+                city: frm.doc.custom_geolocation_city,
+                area: frm.doc.custom_geolocation_area,
+                street: frm.doc.custom_geolocation_street,
+
+
+            };
+
+            frappe.call({
+                method: 'padmavati_crm.public.py.lead.generate_unique_code',
+                args: args,
+                callback: function(response) {
+                    if (response.message) {
+                        console.log(response.message);
+                        frm.set_value('custom_unique_id', response.message);
+                    }
+                }
+            });
+        } else {
+            frappe.msgprint(__('To generate a unique code for the employee, the address hierarchy needs to be filled out.'));
+            frappe.validated = false;
+        }
     }
+
 });
