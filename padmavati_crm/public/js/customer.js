@@ -31,7 +31,7 @@ frappe.ui.form.on('Customer', {
                     lead_name: frm.doc.lead_name  // Pass the lead name as argument
                 },
                 callback: function(response) {
-                    console.log(response);
+                 
                     if (response.message === "User created successfully!") {
                         frappe.msgprint(__('User created successfully!'));
                     } else {

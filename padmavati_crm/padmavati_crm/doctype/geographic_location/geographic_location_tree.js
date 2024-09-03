@@ -14,11 +14,11 @@ frappe.treeview_settings["Geographic Location"] = {
             reqd: true
         },
         {
-            fieldtype: 'Link', fieldname: 'custom_location_type', label: __('Location Type'),
+            fieldtype: 'Link', fieldname: 'location_type', label: __('Location Type'),
             options: "Location Type", 
         },
         {
-            fieldtype: 'Int', fieldname: 'custom_location_code', label: __('Location Code')
+            fieldtype: 'Int', fieldname: 'location_code', label: __('Location Code')
         }
     ],
     

@@ -22,7 +22,7 @@ def get_children(doctype, parent=None, location=None, is_root=False):
 		from
 			`tabGeographic Location` comp
 		where
-			ifnull(parent_location, "")={frappe.db.escape(parent)}
+			ifnull(parent_geographic_location, "")={frappe.db.escape(parent)}
 		""",
 		as_dict=1,
 	)
@@ -35,7 +35,7 @@ def add_node():
 	args = frappe.form_dict
 	args = make_tree_args(**args)
 
-	if args.parent_location == "All Locations":
-		args.parent_location = None
+	if args.parent_geographic_location == "All Locations":
+		args.parent_geographic_location = None
 
 	frappe.get_doc(args).insert()
