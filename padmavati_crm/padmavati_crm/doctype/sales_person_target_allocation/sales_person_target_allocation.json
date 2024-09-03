@@ -1,0 +1,117 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:naming_series",
+ "creation": "2024-09-03 11:59:28.110114",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "section_break_ahyt",
+  "daily",
+  "column_break_rshe",
+  "weekly",
+  "column_break_upyk",
+  "monthly",
+  "section_break_uxnk",
+  "daily_target_quantity",
+  "column_break_dxkj",
+  "daily_target_amount",
+  "section_break_vbwx",
+  "weekly_target"
+ ],
+ "fields": [
+  {
+   "depends_on": "eval:doc.daily === 1;",
+   "fieldname": "section_break_uxnk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "daily_target_quantity",
+   "fieldtype": "Data",
+   "label": "Daily Target Quantity"
+  },
+  {
+   "fieldname": "column_break_dxkj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "daily_target_amount",
+   "fieldtype": "Data",
+   "label": "Daily Target Amount"
+  },
+  {
+   "depends_on": "eval:doc.weekly === 1;",
+   "fieldname": "section_break_vbwx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "weekly_target",
+   "fieldtype": "Table",
+   "label": "Weekly Target",
+   "options": "Weekly Target Allocation"
+  },
+  {
+   "default": "0",
+   "fieldname": "daily",
+   "fieldtype": "Check",
+   "label": "Daily"
+  },
+  {
+   "fieldname": "column_break_rshe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "weekly",
+   "fieldtype": "Check",
+   "label": "Weekly"
+  },
+  {
+   "fieldname": "column_break_upyk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "monthly",
+   "fieldtype": "Check",
+   "label": "Monthly"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Naming Series",
+   "unique": 1
+  },
+  {
+   "fieldname": "section_break_ahyt",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-09-03 12:54:35.739770",
+ "modified_by": "Administrator",
+ "module": "Padmavati_CRM",
+ "name": "Sales Person Target Allocation",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
